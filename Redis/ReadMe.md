@@ -168,3 +168,42 @@ get_data("user123")
 4.次回のアクセスでは Redis から即座に取得 → `r.get("user123")`
 
 Redisのget命令は、`r.get(key)`でPythonのRedisライブラリが内部的に Redisプロトコル を使って、`GET user123`というコマンドを TCPポート6379でRedisに送信している。
+
+# Redis側のKVを確認
+
+
+Redisコンテナに入る
+```
+docker exec -it redis-server redis-cli
+
+127.0.0.1:6379> 
+```
+
+キーの一覧を取得
+```
+keys *
+1) "user123"
+127.0.0.1:6379> 
+```
+
+特定のキーの中身を見る
+
+get user123
+
+"Value-for-user123"
+
+他にも以下のようなコマンドがある
+キーがあるか確認
+```
+exists mykey	1（あり）or 0（なし）
+```
+削除
+```
+del mykey	指定キーを削除
+```
+全削除（注意）
+```
+flushall	すべてのデータを削除（注意）
+```
+
+# 活動への応用
