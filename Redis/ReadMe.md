@@ -25,6 +25,7 @@ Redisとは、**インメモリ型データストア**と呼ばれる超高速�
 docker compose -f docker-compose.yaml up -d
 
 [結果]
+
 [+] Running 8/8
  ✔ redis Pulled                                                                                                                             13.5s 
    ✔ 3da95a905ed5 Pull complete                                                                                                              7.8s 
@@ -207,3 +208,13 @@ flushall	すべてのデータを削除（注意）
 ```
 
 # 活動への応用
+=======
+
+
+[確認コマンド]
+docker ps
+
+[結果]
+
+```
+
